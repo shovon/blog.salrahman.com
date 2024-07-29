@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p {
+	@apply pb-3;
+}
+
+a {
+	@apply text-blue-500;
+}
+
+h2 {
+	@apply font-bold text-2xl pb-3 pt-4
+}
