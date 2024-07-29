@@ -8,7 +8,7 @@ export default function Home() {
 			<ul className="list-none  [&_li_a_p]:text-gray-600 [&_li_h3]:text-xl [&_li_h3]:font-bold">
 				{allPosts.map((post) => (
 					<li key={post._meta.path}>
-						<a href={`/posts/${generatePath(post)}`}>
+						<a href={`/posts${generatePath(post)}`}>
 							<h3>{post.title}</h3>
 							<p>{format(new Date(post.publishDate), "MMMM do, y")}</p>
 						</a>
