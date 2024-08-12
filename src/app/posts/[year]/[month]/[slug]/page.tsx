@@ -19,7 +19,7 @@ export default function Home() {
 	}
 
 	return (
-		<main className="my-0 mx-auto max-w-3xl mt-11">
+		<main className="my-0 mx-auto mb-12 max-w-3xl mt-11">
 			<article>
 				<hgroup className="mb-4">
 					<p className="text-gray-500">

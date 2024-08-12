@@ -13,3 +13,15 @@ a {
 h2 {
 	@apply font-bold text-2xl pb-3 pt-4
 }
+
+.katex-html {
+	@apply hidden;
+}
+
+.katex-display {
+	@apply block my-5;
+}
+
+blockquote {
+	@apply border-l-2 border-red-600 pl-5 my-5;
+}
