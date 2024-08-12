@@ -81,6 +81,6 @@ Mathematicians are fairly rigourous. For that they will never allow either side 
 
 That said, there are some quantities that would be interesting to study not necessarily equal to that point, but near it. And this study is the study of limit.
 
-This is where the definition of a limit comes on, which should help elliminate ambiguities of what can and cannot be near a certain point.
+This is where the definition of a limit comes in, which should help elliminate ambiguities of what can and cannot be near a certain point.
 
 Hopefully you have a better intuition now for what it is the study of limits involves.
