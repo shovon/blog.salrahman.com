@@ -51,21 +51,21 @@ So what is that definition of a limit that everyone seems to be so confused abou
 
 It goes like this:
 
-> $f(x)$ approaches the limit $L$, as $x$ approaches $a$, if and only if for every $\epsilon$, there exists a $\delta$ such that if $x$ is within $\delta$ distance away from $a$, then it must follow that $f(x)$ is within $\epsilon$ distance from $L$
+> $f(x)$ approaches the limit $L$, as $x$ approaches $a$, if and only if for every $\epsilon > 0$, there exists a $\delta >  0$ such that if $x$ is within $\delta$ distance away from $a$, then it must follow that $f(x)$ is within $\epsilon$ distance from $L$
 
 To put it in math terms, the above would translate into:
 
 $$
-\lim_{x \rightarrow a} f(x) = L \Longleftrightarrow \forall_{\epsilon}\exists_{\delta} 0 < |x - a| < \epsilon \rightarrow |f(x) - L| < \delta
+\lim_{x \rightarrow a} f(x) = L \Longleftrightarrow \forall_{\epsilon > 0}\exists_{\delta > 0} 0 < |x - a| < \epsilon \rightarrow |f(x) - L| < \delta
 $$
 
 So what that is effectively saying is that if you are to have $x$ freely move within $\delta$ distance from $a$, then this act of moving around should have $f(x)$ move no further than $\epsilon$ distance from $L$.
 
-Of course, we're only asking for _one_ $\delta$, so it doesn't make sense to choose a $\delta$ first. Instead, we iterate across all possible $\epsilon$, and we search for a $\delta$ that will satisfy the implication. If no such $\delta$ is found, vacuously, the existential quantifier that one $\delta$ must exist fails, and a candidate limit is not the limit of the expression.
+Of course, we're only asking for _one_ $\delta$ for each $\epsilon$, so it doesn't make sense to choose a $\delta$ first. Instead, we iterate across all possible $\epsilon$, and we search for a $\delta$ that will satisfy the implication. If no such $\delta$ is found, vacuously, the existential quantifier that one $\delta$ must exist fails, and a candidate limit is not the limit of the expression.
 
 ## Example
 
-For people who asked "how come $\lim_{x\rightarrow a}\frac{x^2}{x}$ is $a$ and not something like $a^2$ ?", there's good news.
+For people who asked "how come $\lim_{x\rightarrow a}\frac{x^2}{x}$ is $a$ and not something like $a^2$ ?", that is an excellent question.
 
 If we are to follow the definition of the limit to the letter, we can set $a = 4$ as an example, which has $|x - a^2| < \epsilon \rightarrow |x - 4^2| < \epsilon  \rightarrow |x - 16| < \epsilon$ as the conclusion. Regardless of what $\delta$ we pick for some $\epsilon$, there will always be some value of $x$ that will fail to satisfy the conclusion, thus making the entire implication false. And remember, we need to satisfy not just some $\epsilon$, but absolutly none of the $\epsilon$ should fail to have found a $\delta$.
 

@@ -14,14 +14,16 @@ export default function Home() {
 							? -1
 							: 0
 					)
-					.map((post) => (
-						<li key={post._meta.path}>
-							<a href={`/posts${generatePath(post)}`}>
-								<h3>{post.title}</h3>
-								<p>{format(new Date(post.publishDate), "MMMM do, y")}</p>
-							</a>
-						</li>
-					))}
+					.map((post) => {
+						return (
+							<li key={post._meta.path}>
+								<a href={`/posts${generatePath(post)}`}>
+									<h3>{post.title}</h3>
+									<p>{format(new Date(post.publishDate), "MMMM do, y")}</p>
+								</a>
+							</li>
+						);
+					})}
 			</ul>
 		</main>
 	);
