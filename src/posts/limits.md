@@ -1,7 +1,7 @@
 ---
 title: "Sharing what I learned about limits"
 summary: "Sharing how I finally understood limits in mathematics"
-publishDate: "2024-08-11"
+publishDate: "2024-08-11T00:00:00-07:00"
 author: "Sal Rahman"
 ---
 

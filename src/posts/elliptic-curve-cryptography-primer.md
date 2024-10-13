@@ -1,7 +1,7 @@
 ---
 title: "Primer on Elliptic Curve Cryptography"
 summary: "Just dumbing down the ideas behind elliptic curve cryptography so that a highschooler can understand."
-publishDate: "2024-09-23"
+publishDate: "2024-09-23T00:00:00-07:00"
 author: "Sal Rahman"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "First Post"
 summary: "I'm going to (re)start blogging (again)."
-publishDate: "2024-07-28"
+publishDate: "2024-07-28T00:00:00-07:00"
 author: "Sal Rahman"
 ---
 

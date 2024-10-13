@@ -1,7 +1,7 @@
 ---
 title: "A cute Golang pattern"
 summary: "So I've been doing this for a while. It could become an anti-pattern, or it could be the best thing ever"
-publishDate: "2024-10-13"
+publishDate: "2024-10-13T00:00:00-07:00"
 author: "Sal Rahman"
 ---
 
