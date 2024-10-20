@@ -16,6 +16,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<head>
+				<link
+					rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+				></link>
+			</head>
 			<body className={`${inter.className}`}>
 				<div className="p-4">
 					<nav className="my-0 mx-auto max-w-3xl mt-4 flex border-b-2 pb-4">

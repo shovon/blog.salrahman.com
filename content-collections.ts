@@ -5,6 +5,7 @@ import rehypeKatex from "rehype-katex";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
+import rehypeHighlight from "rehype-highlight";
 
 const posts = defineCollection({
 	name: "posts",
@@ -20,7 +21,7 @@ const posts = defineCollection({
 	transform: async (document, context) => {
 		const html = await compileMarkdown(context, document, {
 			remarkPlugins: [remarkMath, remarkParse, remarkRehype],
-			rehypePlugins: [rehypeKatex, rehypeStringify],
+			rehypePlugins: [rehypeKatex, rehypeStringify, rehypeHighlight],
 			allowDangerousHtml: true,
 		});
 		return {
