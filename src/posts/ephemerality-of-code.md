@@ -1,7 +1,7 @@
 ---
 title: "On ephemerality and code readability"
 summary: "Does code really need to be readable, all the time?"
-publishDate: "2024-11-01:00:00-07:00"
+publishDate: "2024-11-01T00:00:00-07:00"
 author: "Sal Rahman"
 ---
 
