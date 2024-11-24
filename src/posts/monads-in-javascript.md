@@ -196,9 +196,8 @@ It's useful if you want the elegance of issuing a GET request without storing an
 
 ```typescript
 function fn() {
-	return fetch("https://example.com").then(async (response) =>
-		parse(await response.json())
-	);
+	return fetch("https://example.com")
+		.then(async (response) => parse(await response.json()));
 }
 ```
 
@@ -211,7 +210,7 @@ async function fn() {
 }
 ```
 
-Neither is more or less legible than the other, but at the very least, in certain situation, if it is felt that it is best to avoid declaring any additional variables, then the promise approach (as opposed to the async/await approach) can be favourable for some people.
+Neither is more or less legible than the other (IMO), but at the very least, in certain situation, if it is felt that it is best to avoid declaring any additional variables, then the promise approach (as opposed to the async/await approach) can be favourable for some people.
 
 ## More monad patterns
 
