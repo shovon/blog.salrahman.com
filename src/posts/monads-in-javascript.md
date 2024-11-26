@@ -15,7 +15,7 @@ And this is where monads come in.
 
 Monads are a way to encapsulate a result of a computation. To extract it, a special "bind" operator is given a function to further transform that result and return another instance of a monad.
 
-It may seem that I'm referring generically closure, and I could, but monads also have "laws" that they naturally adhere to. Not saying these laws can't be preserved using closures, but I am saying that the concept is not exclusive to it.
+It may seem like I'm generically referring to closures, and I could, but monads also have "laws" that they naturally adhere to. Not saying these laws can't be preserved using closures, but I am saying that the concept is not exclusive to them.
 
 But before I even talk about monad laws, let's define a type that we can use to represent a monad.
 
@@ -140,6 +140,8 @@ And, by the nature of a lot of problems, one asynchronous call will lead to anot
 Here's an example:
 
 ```typescript
+// This is ugly…
+
 doSomething((err, s) => {
 	if (err) {
 		return;
@@ -197,7 +199,8 @@ It's useful if you want the elegance of issuing a GET request without storing an
 ```typescript
 function fn() {
 	return fetch("https://example.com")
-		.then(async (response) => parse(await response.json()));
+		.then((response) => response.json())
+		.then((value) => parse(value));
 }
 ```
 
@@ -218,7 +221,7 @@ What's nice about monads (and interface segregation in general) is that monads d
 
 A programming pattern employed is to fail fast.
 
-But, failing fast with runtime exception causes unnecessary crashes for a lot of applications.
+But, failing fast with runtime exceptions cause undesirable crashes.
 
 A middle ground is to fail fast, preventing further execution, but just not crash.
 
