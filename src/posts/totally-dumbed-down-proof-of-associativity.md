@@ -5,7 +5,7 @@ publishDate: "2024-12-19T00:00:00-08:00"
 author: "Sal Rahman"
 ---
 
-The Cayley-Bacharach states:
+The Cayley-Bacharach theorem states:
 
 > If two cubics $C_1$ and $C_2$ intersect at 9 points, and a third cubic $C_3$ passes through 8 of the 9th point, then it will also pass through the 9th intersection point, as well.
 
