@@ -13,14 +13,14 @@ The Cayley-Bacharach theorem states:
 
 We have three cubics, $C_1$, $C_2$, and $C_3$.
 
-By Bézout's theorem, we will have $C_1$ and $C_2$ intersect on 9 points.
+Because $C_1$ and $C_2$ are degree $3$ curves, by Bézout's theorem, $C_1$ and $C_2$ will intersect on at most $3 \cdot 3 = 9$ points. Another way to say this is that $C_1$ and $C_2$ will share $9$ common vanishing points. Also worded alternatively, the zero set of both $C_1$ and $C_2$ will be those 9 points. Also note that the linear combination of $C_1$ and $C_2$ forms a pencil that will span the space of all cubics that pass through those 9 points.
 
-Let's have it so that the third curve $C_3$ passes through 8 of the 9 points.
+Let's have it so that the third cubic $C_3$ passes through 8 of the 9 points of the intersections of $C_1$ and $C_2$.
 
-This means that we are imposing 8 linear conditions on the third curve. Because of this, the space of cubics that pass through just about _any_ 9th point is expressible as a solution to a system of 8 cubic equations. This will thus leave us with a linear combination of two cubics, forming a space of cubics that pass through those 8 points, and an arbitrary 9th point.
+This means that the space of cubics that pass through those 8 points—for which $C_1$, $C_2$, and $C_3$ will be a part of—imposes 8 linear condition. Because of this, the space of cubics that pass through these 8 points is expressible as a system of 8 cubic equations. Solving for it will thus leave us with a linear combination of two cubics, giving us again a pencil of cubics that pass through those 8 points. And again, the span of which includes $C_1$, $C_2$, and $C_3$.
 
-Same can be said of both $C_1$ and $C_2$, and thus both $C_1$ and $C_2$ is expressible by curves that pass through those 8 points. This means that $C_3$ is also expressible as a linear combination of $C_1$ and $C_2$.
+This means that $C_3$ can be expressible as a linear combination of $C_1$ and $C_2$.
 
-Because both $C_1$ and $C_2$ share the same 9 vanishing points, and that $C_3$ is expressible as a linear combination of $C_1$ and $C_2$, we immediately know that the $C_3$ will also share those same 9 vanishing points.
+By Bézout's theorem, not only the span will share those 8 vanishing points, but will also all 9 vanishing points.
 
 This proof has been inspired by one written by Matthias Volk, over at his blog post "[Cayley-Bacharach theorem](https://relint.de/cayley-bacharach.html)".
