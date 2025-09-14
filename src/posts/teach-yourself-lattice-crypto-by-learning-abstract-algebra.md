@@ -1,7 +1,7 @@
 ---
 title: "Helpful topic to teach yourself lattice-based crypto: abstract algebra"
 summary: "An article to discuss the series on"
-publishDate: "2025-08-13T05:16:00-08:00"
+publishDate: "2025-09-13T17:16:00-08:00"
 author: "Sal Rahman"
 ---
 
