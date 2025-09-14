@@ -1,6 +1,6 @@
 ---
 title: "Helpful topic to teach yourself lattice-based crypto: abstract algebra"
-summary: "An article to discuss the series on"
+summary: "Lattice-based crypto may work with numbers, but not just any numbers. Thinking in terms of abstract algebra empowers you to set specific rules that allow you to work with certain numbers."
 publishDate: "2025-09-13T17:16:00-08:00"
 author: "Sal Rahman"
 ---
