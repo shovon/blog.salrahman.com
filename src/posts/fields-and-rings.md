@@ -20,7 +20,7 @@ A field is a set that is equipped with two specific operations: addition ($+$), 
 - Closure: $a + b$ is a part of the field. (For example, adding two numbers together will always get another number.)
 - Associativity: $(a + b) + c = a + (b + c)$
 - Identity: there exists an element $O$ such that $a + O = a$
-- Inverses: For every $a$, there exists some $d$, such that $a + d = O$
+- Inverses: for every $a$, there exists some $d$, such that $a + d = O$
 - Commutativity: $a + b = b + a$
 
 On top of additions forming an abelian group, multiplicatons do so as well (except for some element $O$).
