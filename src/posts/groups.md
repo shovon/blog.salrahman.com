@@ -17,7 +17,7 @@ If rings are a generalization of fields, do rings themselves generalize to somet
 
 Yes!
 
-That's what groups are.
+That's precisely what groups are.
 
 While both fields and rings have multiplicative groups, groups generalize to only have addition groups without the multiplications.
 
