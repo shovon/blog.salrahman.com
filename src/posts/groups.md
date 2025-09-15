@@ -13,7 +13,7 @@ Recall fields add _more_ restrictions in addition to rings to have some set sati
 
 But to flip things around to give a better perspective, it's worth to think of rings as a generalization of a field.
 
-If rings are a generalization of fields, do rings themselves generalize to sometehing else?
+If rings are a generalization of fields, do rings themselves generalize to something else?
 
 Yes!
 
