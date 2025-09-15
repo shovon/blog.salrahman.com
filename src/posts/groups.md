@@ -1,0 +1,26 @@
+---
+title: "Helpful topic to teach yourself lattice-based crypto: groups"
+summary: "We have integers. They form a group. What is a group will be discussed in this article"
+publishDate: "2025-09-15T15:20:00-08:00"
+author: "Sal Rahman"
+---
+
+In another article, I talked about rings and fields.
+
+But I think that I got ahead of myself.
+
+Recall fields add _more_ restrictions in addition to rings to have some set satisfy the definition of what a field is.
+
+But to flip things around to give a better perspective, it's worth to think of rings as a generalization of a field.
+
+If rings are a generalization of fields, do rings themselves generalize to sometehing else?
+
+Yes!
+
+That's what groups are.
+
+While both fields and rings have multiplicative groups, groups generalize to only have addition groups without the multiplications.
+
+Although at the time of writing this, I'm not sure how groups—as a generlization—can be helpful for understanding lattice-based cryptography, there is a motivation to learn groups.
+
+Learning groups allow us to start thinking about groups in other ways, such as subgroups and cosets, which will be a topic of a future blog post.
