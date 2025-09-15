@@ -23,4 +23,4 @@ While both fields and rings have multiplicative groups, groups generalize to onl
 
 Although at the time of writing this, I'm not sure how groups—as a generlization—can be helpful for understanding lattice-based cryptography, there is a motivation to learn groups.
 
-Learning groups allow us to start thinking about groups in other ways, such as subgroups and cosets, which will be a topic of a future blog post.
+Learning groups allow us to start thinking about groups in other ways, such as subgroups, cosets, and quotient groups, which will be a topic of a future blog post. Especially quotient groups, the latter of which is a good gateway into quotient _rings_, which is a generalization of one of the tools used in modern implementations of lattice-based cryptography, such ML-KEM.
