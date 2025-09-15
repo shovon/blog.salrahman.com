@@ -5,7 +5,7 @@ publishDate: "2025-09-15T15:20:00-08:00"
 author: "Sal Rahman"
 ---
 
-In another article, I talked about rings and fields.
+In another [article](https://blog.salrahman.com/posts/2025/09/fields-and-rings), I talked about rings and fields.
 
 But I think that I got ahead of myself.
 
