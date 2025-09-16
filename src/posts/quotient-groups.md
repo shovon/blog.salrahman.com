@@ -7,7 +7,7 @@ author: "Sal Rahman"
 
 In another post, I [talked about groups](https://blog.salrahman.com/posts/2025/09/groups).
 
-As a refresher, groups are a generalization of [rings](https://blog.salrahman.com/posts/2025/09/fields-and-rings) (and rings are a generalization of fields). Recall that rings have both an additive group and a multiplicative semigroup or a monoid, but groups alone are defined by some additive group. For an added refresher, groups are defined as sets equipped with a single operation that is closed, associative, has an identity element, and where every element has an inverse.
+As a refresher, groups are a generalization of [rings](https://blog.salrahman.com/posts/2025/09/fields-and-rings) (and rings are a generalization of fields). Recall that rings have both an additive group and a multiplicative semigroup or monoid, but groups alone are defined by some additive group. For an added refresher, groups are defined as sets equipped with a single operation that is closed, associative, has an identity element, and where every element has an inverse.
 
 A property of many groups is that they can have what are known as subgroups.
 
