@@ -11,24 +11,27 @@ The imagery that may come to mind is something that can easily be derived by plo
 
 But in lattice-based cryptography, integers aren't quite used as how you were taught in elementary school, and real numbers aren't used at all.
 
-What's used, instead are rings (more specifically, [polynomial quotient rings](https://en.wikipedia.org/wiki/Polynomial_ring), but more on that in a future blog post), and to work with those rings, we must work with fields (more spefically, [finite fields](https://en.wikipedia.org/wiki/Finite_field), but also will be a subject of a future blog post, or, feel free to read my post on ["elliptic curve cryptography"](https://blog.salrahman.com/posts/2024/09/elliptic-curve-cryptography-primer) which does touch on the topic of finite field math).
+What's used, instead are rings (more specifically, [polynomial quotient rings](https://en.wikipedia.org/wiki/Polynomial_ring), but more on that in another blog post), and to work with those rings, we must work with fields (more spefically, [finite fields](https://en.wikipedia.org/wiki/Finite_field), but also will be a subject of a future blog post, or, feel free to read my post on ["elliptic curve cryptography"](https://blog.salrahman.com/posts/2024/09/elliptic-curve-cryptography-primer) which does touch on the topic of finite field math).
 
-So what are fields and rings?
+So what are rings?
 
-A field is a set that is equipped with two specific operations: addition ($+$), and multiplication ($\cdot$), such that additions forms an [abelian group](https://en.wikipedia.org/wiki/Abelian_group). Which means that we have:
+A ring is a set that must satisfy the following properties:
 
-- Closure: $a + b$ is a part of the field. (For example, adding two numbers together will always get another number.)
-- Associativity: $(a + b) + c = a + (b + c)$
-- Identity: there exists an element $O$ such that $a + O = a$
-- Inverses: for every $a$, there exists some $d$, such that $a + d = O$
-- Commutativity: $a + b = b + a$
+- must be equipped with an addition ($+$) operation, thus forming an [abelian group](https://en.wikipedia.org/wiki/Abelian_group), which satisfies the following properties:
+  - Closure: $a + b$ is a part of the field. (For example, adding two numbers together will always get another number.)
+  - Associativity: $(a + b) + c = a + (b + c)$
+  - Identity: there exists an element $O$ such that $a + O = a$
+  - Inverses: for every $a$, there exists some $d$, such that $a + d = O$
+  - Commutativity: $a + b = b + a$
+- must be equipped with a multiplication ($\cdot$) operation, thus forming a [semigroup](https://en.wikipedia.org/wiki/Semigroup), which only has as a requirement that the operation be associative, similar to the associativity property of abelian groups
+- must have a distributive property $a\cdot (b + c) = a\cdot b + a\cdot c$
 
-On top of additions forming an abelian group, multiplicatons do so as well (except for some element $O$).
+When we add more properties to a semigroup, we start giving them different names. For example, a semigroup with commutative properties (similar to commutative properties of abelian groups), we call them a commutative semigroup.
 
-Fields also we have the distributive law, such that $a \cdot (b + c) = a \cdot b + a \cdot c$.
+When we have the multiplication operations of a ring form a commutative semigroup, we refer to it a "commutative ring".
 
-And what are rings? Rings are like fields, but they lack one property, and it's that multiplications don't have inverses.
+Then when we give a semigroup the added property of an identity element, we call that semigroup a "monoid".
 
-So in other words, all fields are rings, but not all rings are fields.
+When a ring not only has a commutative semigroup, but that commutative semigroup is actually a monoid, we call that ring a "field".
 
-In a future blog post, I will go over how fields and rings are used in current implementations of lattice-based cryptography.
+And the defintition of a field will be an important concept in order to effectively reason about the math behind lattic-based crypto.
