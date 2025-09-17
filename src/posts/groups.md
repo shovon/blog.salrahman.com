@@ -5,22 +5,18 @@ publishDate: "2025-09-15T15:20:00-08:00"
 author: "Sal Rahman"
 ---
 
-In another [article](https://blog.salrahman.com/posts/2025/09/fields-and-rings), I talked about rings and fields.
+In another [article](https://blog.salrahman.com/posts/2025/09/fields-and-rings) about rings and fields, I briefly touched on the topic of an abelian group.
 
-But I think that I got ahead of myself.
+As a quick refresher, in order for a set that happens to be equipped with a binary operation to even be considered an abelian group, it must satisfy the following properties:
 
-Recall fields add _more_ restrictions in addition to rings to have some set satisfy the definition of what a field is.
+- Closure: $a + b$ is a part of the field. (For example, adding two numbers together will always get another number.)
+- Associativity: $(a + b) + c = a + (b + c)$
+- Identity: there exists an element $O$ such that $a + O = a$
+- Inverses: for every $a$, there exists some $d$, such that $a + d = O$
+- Commutativity: $a + b = b + a$
 
-But to flip things around to give a better perspective, it's worth to think of rings as a generalization of a field.
+But a generalization of an abelian group is just a group, and it merely involves removing the requirement that a set equipped with a binary operation to not guarantee to be commutative.
 
-If rings are a generalization of fields, do rings themselves generalize to something else?
+So in other words, get rid of the commutativity requirement, and we're left with a group.
 
-Yes!
-
-That's precisely what groups are.
-
-While both fields and rings have multiplicative groups, groups generalize to only have addition groups without the multiplications.
-
-Although at the time of writing this, I'm not sure how groups—as a generlization—can be helpful for understanding lattice-based cryptography, there is a motivation to learn groups.
-
-Learning groups allow us to start thinking about groups in other ways, such as subgroups, cosets, and quotient groups, which will be a topic of a future blog post. Especially quotient groups, the latter of which is a good gateway into quotient _rings_, which is a generalization of one of the tools used in modern implementations of lattice-based cryptography, such ML-KEM.
+Groups are an important topic to explore, because later on, we are going to be exploring the idea of a subgroup.
