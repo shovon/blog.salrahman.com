@@ -52,3 +52,26 @@ li {
 blockquote {
 	@apply border-l-2 border-red-600 pl-5 my-5;
 }
+
+/* GitHub-style Alerts */
+.alert {
+	@apply my-5 rounded-md border p-4;
+}
+.alert-title {
+	@apply m-0 mb-2 font-semibold;
+}
+.alert-note {
+	@apply border-blue-300 bg-blue-50 text-blue-900;
+}
+.alert-tip {
+	@apply border-emerald-300 bg-emerald-50 text-emerald-900;
+}
+.alert-important {
+	@apply border-purple-300 bg-purple-50 text-purple-900;
+}
+.alert-warning {
+	@apply border-yellow-300 bg-yellow-50 text-yellow-900;
+}
+.alert-caution {
+	@apply border-red-300 bg-red-50 text-red-900;
+}

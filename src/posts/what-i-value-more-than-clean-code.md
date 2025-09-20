@@ -1,7 +1,7 @@
 ---
 title: "What I value more than clean code"
 summary: "Throughout my software engineering career, I'd hear this oft-repeated complaint from way too many people: code is hard to read. But should we always listen to this complaint, or should we just let them pass?"
-publishDate: "2024-11-02T00:00:00-0"
+publishDate: "2024-11-02T00:00:00-00:00"
 author: "Sal Rahman"
 ---
 

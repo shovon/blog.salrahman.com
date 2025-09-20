@@ -6,31 +6,37 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
+import rehypeGithubAlerts from "./src/lib/rehypeGithubAlerts";
 
 const posts = defineCollection({
-	name: "posts",
-	directory: "src/posts",
-	include: "**/*.md",
-	schema: (z) => ({
-		title: z.string(),
-		summary: z.string(),
-		publishDate: z
-			.string()
-			.refine((value) => !isNaN(new Date(value).getTime())),
-	}),
-	transform: async (document, context) => {
-		const html = await compileMarkdown(context, document, {
-			remarkPlugins: [remarkMath, remarkParse, remarkRehype],
-			rehypePlugins: [rehypeKatex, rehypeStringify, rehypeHighlight],
-			allowDangerousHtml: true,
-		});
-		return {
-			...document,
-			html,
-		};
-	},
+  name: "posts",
+  directory: "src/posts",
+  include: "**/*.md",
+  schema: (z) => ({
+    title: z.string(),
+    summary: z.string(),
+    publishDate: z
+      .string()
+      .refine((value) => !isNaN(new Date(value).getTime())),
+  }),
+  transform: async (document, context) => {
+    const html = await compileMarkdown(context, document, {
+      remarkPlugins: [remarkMath, remarkParse, remarkRehype],
+      rehypePlugins: [
+        rehypeGithubAlerts,
+        rehypeKatex,
+        rehypeStringify,
+        rehypeHighlight,
+      ],
+      allowDangerousHtml: true,
+    });
+    return {
+      ...document,
+      html,
+    };
+  },
 });
 
 export default defineConfig({
-	collections: [posts],
+  collections: [posts],
 });
