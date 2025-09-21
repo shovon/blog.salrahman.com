@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: MetadataProps) {
 
   return {
     title: post.title,
+    description: post.summary,
   };
 }
 
