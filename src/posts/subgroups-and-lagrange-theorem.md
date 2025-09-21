@@ -1,7 +1,7 @@
 ---
 title: "Helpful topic to teach yourself lattice-based crypto: subgroups and Lagrange's theorem"
 summary: "If we are motivated enough to find subdivisions of a group, we can subdivide them into subgroups. But we can't just do this blindly; there are certain discovered and implied of rules of math that makes arbitrary division of groups highly difficult. This article goes over some detailed overview of Lagrange's theorem, which should serve as a gateway towards other topics."
-publishDate: "2025-09-17T20:38:00-08:00"
+publishDate: "2025-09-20T15:38:00-08:00"
 author: "Sal Rahman"
 ---
 
