@@ -26,7 +26,7 @@ export default function RootLayout({
 			<body className={`${inter.variable} ${lora.variable} font-sans`}>
 				<div className="min-h-screen">
 					<nav className="border-b border-stone-200 bg-white/80 backdrop-blur-sm sticky top-0 z-10">
-						<div className="mx-auto max-w-2xl px-6 py-4 flex items-center justify-between">
+						<div className="mx-auto max-w-2xl py-4 flex items-center justify-between">
 							<a href="/" className="text-stone-800 hover:text-stone-600 no-underline">
 								<span className="font-serif text-lg font-medium tracking-tight">
 									Thoughts from a programmer
