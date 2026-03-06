@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
 
 export const metadata: Metadata = {
 	title: "Sal's Blog",
@@ -19,24 +20,29 @@ export default function RootLayout({
 			<head>
 				<link
 					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+					href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
 				></link>
 			</head>
-			<body className={`${inter.className}`}>
-				<div className="p-4">
-					<nav className="my-0 mx-auto max-w-3xl mt-4 flex border-b-2 pb-4 items-center justify-between">
-						<div className="text-gray-500 font-bold">
-							<a href="/" className="text-gray-500">
-								Thoughts from a programmer
+			<body className={`${inter.variable} ${lora.variable} font-sans`}>
+				<div className="min-h-screen">
+					<nav className="border-b border-stone-200 bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+						<div className="mx-auto max-w-2xl px-6 py-4 flex items-center justify-between">
+							<a href="/" className="text-stone-800 hover:text-stone-600 no-underline">
+								<span className="font-serif text-lg font-medium tracking-tight">
+									Thoughts from a programmer
+								</span>
+							</a>
+							<a
+								href="https://salrahman.com"
+								className="text-sm text-stone-500 hover:text-stone-800 transition-colors"
+							>
+								About
 							</a>
 						</div>
-						<ul className="[&>li]:inline-block [&>li]:p-0 p-0">
-							<li>
-								<a href="https://salrahman.com">About</a>
-							</li>
-						</ul>
 					</nav>
-					{children}
+					<div className="px-6">
+						{children}
+					</div>
 				</div>
 			</body>
 		</html>

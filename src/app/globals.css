@@ -2,43 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-p {
-	@apply pb-3;
-}
+@layer base {
+	body {
+		@apply bg-stone-50 text-stone-800 antialiased;
+	}
 
-a {
-	@apply text-blue-500;
-}
+	p {
+		@apply pb-4 leading-relaxed;
+	}
 
-h2 {
-	@apply font-bold text-2xl pb-3 pt-4
-}
+	a {
+		@apply text-indigo-600 hover:text-indigo-800 transition-colors duration-200;
+	}
 
-h3 {
-	@apply font-bold text-xl pb-3 pt-4
-}
+	h2 {
+		@apply font-bold text-2xl pb-3 pt-8 text-stone-900 tracking-tight;
+	}
 
-h4 {
-	@apply font-bold pb-3 pt-4
-}
+	h3 {
+		@apply font-bold text-xl pb-3 pt-6 text-stone-900 tracking-tight;
+	}
 
-pre {
-	@apply mb-4
-}
+	h4 {
+		@apply font-semibold pb-3 pt-4 text-stone-900;
+	}
 
-ul,
-ol {
-	list-style-type: disc;
-	/* You can use 'decimal' for ordered lists */
-	margin: 1em 0;
-	/* Reapply the margin */
-	padding-left: 40px;
-	/* Reapply padding to create space for the bullets/numbers */
-}
+	pre {
+		@apply mb-5 rounded-lg p-4 text-sm leading-relaxed overflow-x-auto border border-stone-200 bg-stone-900 text-stone-100;
+	}
 
-li {
-	margin-bottom: 0.5em;
-	/* Add some space between list items */
+	code:not(pre code) {
+		@apply bg-stone-200 text-stone-800 rounded px-1.5 py-0.5 text-sm font-mono;
+	}
+
+	pre code {
+		@apply bg-transparent p-0 text-inherit;
+	}
+
+	ul,
+	ol {
+		list-style-type: disc;
+		@apply my-4 pl-8;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	li {
+		@apply mb-2 leading-relaxed;
+	}
+
+	hr {
+		@apply my-8 border-stone-200;
+	}
+
+	strong {
+		@apply font-semibold text-stone-900;
+	}
+
+	blockquote {
+		@apply border-l-4 border-indigo-300 bg-indigo-50/50 pl-5 pr-4 py-3 my-6 rounded-r-lg;
+	}
+
+	blockquote p:last-child {
+		@apply pb-0;
+	}
+
+	table {
+		@apply w-full my-6 border-collapse;
+	}
+
+	th {
+		@apply text-left font-semibold p-3 border-b-2 border-stone-200 text-stone-900;
+	}
+
+	td {
+		@apply p-3 border-b border-stone-100;
+	}
 }
 
 .katex-html {
@@ -46,32 +87,28 @@ li {
 }
 
 .katex-display {
-	@apply block my-5;
-}
-
-blockquote {
-	@apply border-l-2 border-red-600 pl-5 my-5;
+	@apply block my-6;
 }
 
 /* GitHub-style Alerts */
 .alert {
-	@apply my-5 rounded-md border p-4;
+	@apply my-6 rounded-lg border p-5;
 }
 .alert-title {
 	@apply m-0 mb-2 font-semibold;
 }
 .alert-note {
-	@apply border-blue-300 bg-blue-50 text-blue-900;
+	@apply border-blue-200 bg-blue-50 text-blue-900;
 }
 .alert-tip {
-	@apply border-emerald-300 bg-emerald-50 text-emerald-900;
+	@apply border-emerald-200 bg-emerald-50 text-emerald-900;
 }
 .alert-important {
-	@apply border-purple-300 bg-purple-50 text-purple-900;
+	@apply border-purple-200 bg-purple-50 text-purple-900;
 }
 .alert-warning {
-	@apply border-yellow-300 bg-yellow-50 text-yellow-900;
+	@apply border-amber-200 bg-amber-50 text-amber-900;
 }
 .alert-caution {
-	@apply border-red-300 bg-red-50 text-red-900;
+	@apply border-red-200 bg-red-50 text-red-900;
 }

@@ -4,8 +4,11 @@ import { format } from "date-fns";
 
 export default function Home() {
 	return (
-		<main className="my-0 mx-auto max-w-3xl mt-11">
-			<ul className="list-none  [&_li_a_p]:text-gray-600 [&_li_h3]:text-xl [&_li_h3]:font-bold">
+		<main className="mx-auto max-w-2xl py-16">
+			<h1 className="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-12">
+				All Posts
+			</h1>
+			<div className="space-y-1">
 				{allPosts
 					.sort((a, b) =>
 						a.publishDate < b.publishDate
@@ -16,15 +19,28 @@ export default function Home() {
 					)
 					.map((post) => {
 						return (
-							<li key={post._meta.path}>
-								<a href={`/posts${generatePath(post)}`}>
-									<h3>{post.title}</h3>
-									<p>{format(new Date(post.publishDate), "MMMM do, y")}</p>
-								</a>
-							</li>
+							<a
+								key={post._meta.path}
+								href={`/posts${generatePath(post)}`}
+								className="group block rounded-lg px-4 py-4 -mx-4 hover:bg-white hover:shadow-sm transition-all duration-200 no-underline"
+							>
+								<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+									<h2 className="text-base font-medium text-stone-900 group-hover:text-indigo-600 transition-colors duration-200 p-0 tracking-normal">
+										{post.title}
+									</h2>
+									<time className="text-sm text-stone-400 tabular-nums shrink-0">
+										{format(new Date(post.publishDate), "MMM d, yyyy")}
+									</time>
+								</div>
+								{post.summary && (
+									<p className="mt-1 text-sm text-stone-500 line-clamp-1 pb-0">
+										{post.summary}
+									</p>
+								)}
+							</a>
 						);
 					})}
-			</ul>
+			</div>
 		</main>
 	);
 }

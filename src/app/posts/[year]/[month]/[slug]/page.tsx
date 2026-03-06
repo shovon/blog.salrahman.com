@@ -39,16 +39,27 @@ export default function BlogPost({ params }: { params: Params }) {
   }
 
   return (
-    <main className="my-0 mx-auto mb-12 max-w-3xl mt-11">
+    <main className="mx-auto max-w-2xl py-16">
       <article>
-        <hgroup className="mb-4">
-          <p className="text-gray-500">
-            {format(post.publishDate, "MMMM do, y")}
-          </p>
-          <h1 className="text-5xl mb-3 font-bold">{post.title}</h1>
-          <p className="text-gray-600">{post.summary}</p>
-        </hgroup>
-        <section dangerouslySetInnerHTML={{ __html: post.html }}></section>
+        <header className="mb-10">
+          <time className="text-sm font-medium text-indigo-600 uppercase tracking-wider">
+            {format(post.publishDate, "MMMM d, yyyy")}
+          </time>
+          <h1 className="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-stone-900 mt-3 mb-4 leading-tight">
+            {post.title}
+          </h1>
+          {post.summary && (
+            <p className="text-lg text-stone-500 leading-relaxed pb-0">
+              {post.summary}
+            </p>
+          )}
+        </header>
+        <div className="border-t border-stone-200 pt-10">
+          <section
+            className="prose-article"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          ></section>
+        </div>
       </article>
     </main>
   );
