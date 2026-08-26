@@ -5,11 +5,11 @@ publishDate: "2026-08-26T00:00:00-00:00"
 author: "Sal Rahman"
 ---
 
-It was Monday, November 11th, 2013. Someone named Allen Pike of Steamclock software was the host of a talk series, called VanJS; it's a technology group for Vancouver Canada-based JavaScript, Node.js, and web enthusiasts. Attending it costed $5. The company that I was interning at, StrongLoop, covered my cost of admission. The first talk was by Steven Luscher, and he introduced to the audience a new open source project for frontends by Facebook: React.
+It was Monday, November 11th, 2013. Someone named [Allen Pike](https://allenpike.com/) of [Steamclock Software](https://steamclock.com/) was the host of a talk series, called [VanJS](https://www.vanjs.com/); it's a technology group for Vancouver Canada-based JavaScript, Node.js, and web enthusiasts. Attending it costed $5. The company that I was interning at, [StrongLoop](https://en.wikipedia.org/wiki/StrongLoop), covered my cost of admission. The first talk was by [Steven Luscher](https://github.com/steveluscher), and he introduced to the audience a new open source project for frontends by Facebook: [React](https://react.dev/).
 
 Even as far back as 2013, anything new is a tough sell.
 
-The days leading up to React's release, people have been wrangling with jQuery and various plugins. People wrote frameworks on top of jQuery. Backbone.js was released in October 13th of 2010, and shortly afterwards, AngularJS came out. Backbone.js won the hearts of those familiar with jQuery, while AngularJS boasted patterns that encouraged separation of concern, and inversion of control, ultimately, testability.
+The days leading up to React's release, people have been wrangling with [jQuery](https://jquery.com/) and various plugins. People wrote frameworks on top of jQuery. [Backbone.js](https://backbonejs.org/) was released in October 13th of 2010, and shortly afterwards, [AngularJS](https://angularjs.org/) came out (not to be confused with the new Angular 2.0, which is an evolution ahead of the older AngularJS). Backbone.js won the hearts of those familiar with jQuery, while AngularJS boasted patterns that encouraged separation of concern, and inversion of control, ultimately, testability.
 
 Those frameworks were almost established standards by the time React came out, so it shouldn't be any surprise why anyone would be skeptical of React. And people are still skeptical of it, as of 2026.
 
@@ -21,17 +21,17 @@ Performance-oriented veterans at that time would frown at screen redraws, favour
 
 So prior to React, you either had three choices:
 
-- minimize UI updates, favouring minimal features for simpler, more easier to reason about code. Performance remained in-tact, however
-- allow for more ambitious UI updates via fine-grained coding choices, but giving up code simplicity, risking bugs. Performance still remained in-tact
-- redraw the entire screen, allowing for more complex UI, keeping simpler code, but sacrificing performance
+- minimize UI updates, favouring minimal features for simpler, more easier to reason about code. Performance remained in-tact, however.
+- allow for more ambitious UI updates via fine-grained coding choices, but giving up code simplicity, risking bugs. Performance still remained in-tact.
+- redraw the entire screen, allowing for more complex UI, keeping simpler code, but sacrificing performance.
 
 With React, we never had to pick any two of interactivity, code simplicity, or performance, since React gave us all three.
 
-Steven Luscher demonstrated performance, by drawing a grid of divs, each representing a pixel of a live-updating phase-shifting sine curve.
+Steven Luscher demonstrated performance, by drawing a grid of DIVs, each representing a pixel of a live-updating phase-shifting sine curve.
 
-The React-less "redraw everything" demo showed poor performance.
+The plain DOM+JavaScript "redraw everything" demo showed poor performance.
 
-The React one showed real-time rendering.
+The React one showed real-time rendering, with smooth animation!
 
 People were excited.
 
@@ -41,9 +41,9 @@ And I was especially excited. So much so, I ended up createing the [/r/reactjs](
 
 Some rather astute observer would have looked at the problem of writing web UI during web's mid-2000s boom pre-React, and would have concluded that UI application state is merely a change over time.
 
-That would not have been a novel idea. This insight has been documented repeatedly. The "observer pattern" by the "Gang of Four" in 1994 is a good example. _Out of the Tarpit_ in 2006 made mention of "state merely being derived".
+That would not have been a novel idea. This insight has been documented repeatedly. The ["observer pattern"](https://en.wikipedia.org/wiki/Observer_pattern) by the ["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) in 1994 is a good example. [_Out of the Tarpit_](https://curtclifton.net/papers/MoseleyMarks06a.pdf) in 2006 made mention of "state merely being derived".
 
-Even 1943, we had the idea of global state merely being an update in response to an input, and we've invented the "finite state automaton", or "finite state machine".
+Even in 1943, we had the idea of global state merely being an update in response to an input, and we've invented the ["finite state automaton"](https://en.wikipedia.org/wiki/Finite-state_machine), or "finite state machine".
 
 Combining that, we see that UI can be modeled easily as an FSA/FSM.
 
@@ -63,7 +63,7 @@ Although React does allow for turning high-level designs to working software, wh
 
 This fact alone isn't merely a demo — such as that of Steven Luscher sine wave mapped to large blocky pixels made from DIVs demo.
 
-I've actually implemented something like this over at StageKeep. It presented an interaction similar to Figma. Fast, buttery smooth panning and zooming. Interactions once believed to be limited to WebGL and shaders done entirely in SVG by synthesizing coordinates and and zoom value into a 2D grid.
+I've actually implemented something like this over at [StageKeep](https://stagekeep.com/). It presented an interaction similar to Figma. Fast, buttery smooth panning and zooming. Interactions once believed to be limited to WebGL and shaders done entirely in SVG by synthesizing coordinates and and zoom value into a 2D grid.
 
 It was insanely elegant.
 
