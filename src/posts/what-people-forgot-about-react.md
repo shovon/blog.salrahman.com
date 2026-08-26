@@ -73,4 +73,4 @@ It was insanely elegant.
 
 React merely isn't just a fad. It's not merely a preference. It's a critical tool for translating business requirements into feature rich, accessible user experiences, with a faster delivery cadence.
 
-It not only made it faster to transition from screen to screen, but deeply interactive applications with screen content updates happening at animation speeds. Shameless plug: I used React to build StageKeep.
+It not only made it faster to transition from screen to screen, but deeply interactive applications with screen content updates happening at animation speeds.
