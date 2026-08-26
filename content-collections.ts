@@ -12,6 +12,7 @@ const posts = defineCollection({
   name: "posts",
   directory: "src/posts",
   include: "**/*.md",
+  exclude: "_*.md",
   schema: (z) => ({
     title: z.string(),
     summary: z.string(),
