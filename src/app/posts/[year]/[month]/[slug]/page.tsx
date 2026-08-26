@@ -1,5 +1,5 @@
 import { allPosts } from "content-collections";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { generatePath } from "@/lib/article-meta";
 import { format } from "date-fns";
 import type { Metadata } from "next";
