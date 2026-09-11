@@ -5,7 +5,7 @@ publishDate: "2026-08-26T00:00:00-00:00"
 author: "Sal Rahman"
 ---
 
-It was Monday, November 11th, 2013. Someone named [Allen Pike](https://allenpike.com/) of [Steamclock Software](https://steamclock.com/) was the host of a talk series, called [VanJS](https://www.vanjs.com/); it's a technology group for Vancouver Canada-based JavaScript, Node.js, and web enthusiasts. Attending it costed $5. The company that I was interning at, [StrongLoop](https://en.wikipedia.org/wiki/StrongLoop), covered my cost of admission. The first talk was by [Steven Luscher](https://github.com/steveluscher), and he introduced to the audience a new open source project for frontends by Facebook: [React](https://react.dev/).
+It was Monday, November 11th, 2013. [Allen Pike](https://allenpike.com/) of [Steamclock Software](https://steamclock.com/) was the host of a talk series, called [VanJS](https://www.vanjs.com/); it's a technology group for Vancouver Canada-based JavaScript, Node.js, and web enthusiasts. Attending it costed $5. The company that I was interning at, [StrongLoop](https://en.wikipedia.org/wiki/StrongLoop), covered my cost of admission. The first talk was by [Steven Luscher](https://github.com/steveluscher), and he introduced to the audience a new open source project for frontends by Facebook: [React](https://react.dev/).
 
 Even as far back as 2013, anything new is a tough sell.
 
