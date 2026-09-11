@@ -9,7 +9,7 @@ It was Monday, November 11th, 2013. [Allen Pike](https://allenpike.com/) of [Ste
 
 Even as far back as 2013, anything new is a tough sell.
 
-The days leading up to React's release, people have been wrangling with [jQuery](https://jquery.com/) and various plugins. People wrote frameworks on top of jQuery. [Backbone.js](https://backbonejs.org/) was released in October 13th of 2010, and shortly afterwards, [AngularJS](https://angularjs.org/) came out (not to be confused with the new Angular 2.0, which is an evolution ahead of the older AngularJS). Backbone.js won the hearts of those familiar with jQuery, while AngularJS boasted patterns that encouraged separation of concern, and inversion of control, ultimately, testability.
+The days leading up to React's release, people have been proudly wrangling with [jQuery](https://jquery.com/) and various plugins. People wrote frameworks on top of jQuery. [Backbone.js](https://backbonejs.org/) was released in October 13th of 2010, and a whole cottage industry was built around that. Shortly afterwards, [AngularJS](https://angularjs.org/) came out (not to be confused with the new Angular 2.0, which is an evolution ahead of the older AngularJS). Backbone.js won the hearts of those familiar with jQuery, but AngularJS quickly caught up as it boasted patterns that encouraged separation of concern, and inversion of control, ultimately, testability.
 
 Those frameworks were almost established standards by the time React came out, so it shouldn't be any surprise why anyone would be skeptical of React. And people are still skeptical of it, as of 2026.
 
@@ -25,7 +25,7 @@ So prior to React, you either had three choices:
 - allow for more ambitious UI updates via fine-grained coding choices, but giving up code simplicity, risking bugs. Performance still remained in-tact.
 - redraw the entire screen, allowing for more complex UI, keeping simpler code, but sacrificing performance.
 
-With React, we never had to pick any two of interactivity, code simplicity, or performance, since React gave us all three.
+With React, we were no longer beholden to only choosing two of either interactivity, code simplicity, or performance; React gave us all three.
 
 Steven Luscher demonstrated performance, by drawing a grid of DIVs, each representing a pixel of a live-updating phase-shifting sine curve.
 
@@ -63,7 +63,7 @@ Although React does allow for turning high-level designs to working software, wh
 
 This fact alone isn't merely a demo — such as that of Steven Luscher sine wave mapped to large blocky pixels made from DIVs demo.
 
-I've actually implemented something like this over at [StageKeep](https://stagekeep.com/). It presented an interaction similar to Figma. Fast, buttery smooth panning and zooming. Interactions once believed to be limited to WebGL and shaders done entirely in SVG by synthesizing coordinates and and zoom value into a 2D grid.
+I've actually implemented something like this over at [StageKeep](https://stagekeep.com/). It presented an interaction similar to Figma. Fast, buttery smooth panning and zooming. Interactions once believed to be limited to WebGL and shaders is instead done entirely in SVG by synthesizing coordinates and and zoom value into a 2D grid.
 
 It was insanely elegant.
 
@@ -71,6 +71,22 @@ It was insanely elegant.
 
 ## In Conclusion
 
-React merely isn't just a fad. It's not merely a preference. It's a critical tool for translating business requirements into feature rich, accessible user experiences, with a faster delivery cadence.
+React merely isn't just a fad. It's not merely a preference. It became a critical tool for translating business requirements into feature rich, accessible user experiences, with a faster delivery cadence.
 
 It not only made it faster to transition from screen to screen, but deeply interactive applications with screen content updates happening at animation speeds.
+
+## Caveat
+
+I may be praising React for its performance in-spite of the simplicity that it introduced to the market, but I am by no means married to this library. What I do champion however is this mathematical notion of UI:
+
+$$
+\text{View} = f(\text{State})
+$$
+
+Where $f$ is the transformation function that translate states to a view.
+
+Anything that gives us such an elegance, I will always be a champion of.
+
+If you hate React, your comment will have me harbour no grudges towards. I even have my own set of greivances for React, too.
+
+That said, if you value tightly coupling controls with models, then this is a mindset I frankly can't stand behind on.
