@@ -1,0 +1,48 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { format } from "date-fns";
+import Base from "@/layouts/Base.astro";
+import { getMeta } from "@/lib/article-meta";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("posts");
+	return posts.map((post) => ({
+		params: getMeta(post),
+		props: { post },
+	}));
+}
+
+interface Props {
+	post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.summary}>
+	<main class="mx-auto max-w-2xl py-16">
+		<article>
+			<header class="mb-10">
+				<time class="text-sm font-medium text-indigo-600 uppercase tracking-wider">
+					{format(post.data.publishDate, "MMMM d, yyyy")}
+				</time>
+				<h1 class="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-stone-900 mt-3 mb-4 leading-tight sm:leading-none">
+					{post.data.title}
+				</h1>
+				{
+					post.data.summary && (
+						<p class="text-lg text-stone-500 leading-relaxed pb-0">
+							{post.data.summary}
+						</p>
+					)
+				}
+			</header>
+			<div class="border-t border-stone-200 pt-10">
+				<section class="prose-article">
+					<Content />
+				</section>
+			</div>
+		</article>
+	</main>
+</Base>

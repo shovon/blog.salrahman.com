@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+	--font-sans: var(--font-inter), system-ui, sans-serif;
+	--font-serif: var(--font-lora), Georgia, serif;
+}
 
 @layer base {
 	body {
@@ -32,7 +35,7 @@
 	}
 
 	code:not(pre code) {
-		@apply bg-stone-200 text-stone-800 rounded px-1.5 py-0.5 text-sm font-mono;
+		@apply bg-stone-200 text-stone-800 rounded-sm px-1.5 py-0.5 text-sm font-mono;
 	}
 
 	pre code {
