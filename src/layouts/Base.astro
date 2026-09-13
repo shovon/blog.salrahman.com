@@ -1,13 +1,30 @@
 ---
 import { Font } from "astro:assets";
 import "@/styles/global.css";
+import { OG_DEFAULT_PATH, OG_HEIGHT, OG_WIDTH } from "@/lib/og";
 
 interface Props {
 	title: string;
 	description: string;
+	/** "article" for a post, so that unfurls can carry a publish date. */
+	type?: "website" | "article";
+	/** Only meaningful for an article. */
+	publishDate?: string;
+	/** Path to this page's social card. Falls back to the site-wide one. */
+	image?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+	title,
+	description,
+	type = "website",
+	publishDate,
+	image = OG_DEFAULT_PATH,
+} = Astro.props;
+
+// Crawlers fetch the page from elsewhere, so every URL in the head is absolute.
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
 ---
 
 <html lang="en">
@@ -17,6 +34,37 @@ const { title, description } = Astro.props;
 		<link rel="icon" href="/favicon.ico" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta name="author" content="Sal Rahman" />
+		<link rel="canonical" href={canonical} />
+
+		<!-- Open Graph: the preview that chat apps and social sites unfurl. -->
+		<meta property="og:type" content={type} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:site_name" content="Sal's Blog" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content={`${OG_WIDTH}`} />
+		<meta property="og:image:height" content={`${OG_HEIGHT}`} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:alt" content={title} />
+		{
+			type === "article" && publishDate && (
+				<meta
+					property="article:published_time"
+					content={new Date(publishDate).toISOString()}
+				/>
+			)
+		}
+
+		<!-- Twitter/X reads its own tags; "summary" is the text-only card. -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content={title} />
+
 		<link
 			rel="alternate"
 			type="application/rss+xml"

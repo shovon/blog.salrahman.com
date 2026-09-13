@@ -3,6 +3,7 @@ import { render } from "astro:content";
 import { format } from "date-fns";
 import Base from "@/layouts/Base.astro";
 import { getMeta } from "@/lib/article-meta";
+import { ogImagePath } from "@/lib/og";
 import { getPosts, type Post } from "@/lib/posts";
 
 export async function getStaticPaths() {
@@ -21,7 +22,13 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Base title={post.data.title} description={post.data.summary}>
+<Base
+	title={post.data.title}
+	description={post.data.summary}
+	type="article"
+	publishDate={post.data.publishDate}
+	image={ogImagePath(post)}
+>
 	<main class="mx-auto max-w-2xl py-16">
 		<article>
 			<header class="mb-10">
