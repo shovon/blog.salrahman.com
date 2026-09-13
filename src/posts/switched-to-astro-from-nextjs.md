@@ -1,7 +1,7 @@
 ---
 title: "Switching from Next.js to Astro"
 summary: "Previously, my site was built on Next.js. It served me well, but I need something that is more aligned with what my site actually needs. Astro is it."
-publishDate: "2025-09-13T15:38:00-08:00"
+publishDate: "2026-09-13T15:38:00-08:00"
 author: "Sal Rahman"
 ---
 
