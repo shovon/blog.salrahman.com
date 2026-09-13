@@ -17,6 +17,12 @@ const { title, description } = Astro.props;
 		<link rel="icon" href="/favicon.ico" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="Sal's Blog"
+			href={new URL("rss.xml", Astro.site)}
+		/>
 		<Font cssVariable="--font-inter" preload />
 		<Font cssVariable="--font-lora" preload />
 	</head>

@@ -1,6 +1,4 @@
-import type { CollectionEntry } from "astro:content";
-
-type Post = CollectionEntry<"posts">;
+import type { Post } from "@/lib/posts";
 
 /**
  * Derives some metadata from a post
