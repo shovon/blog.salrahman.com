@@ -100,7 +100,7 @@
  */
 @layer base {
 	.prose-article {
-		@apply text-lg font-light leading-relaxed;
+		@apply text-lg leading-relaxed;
 	}
 
 	.prose-article > :first-child {
@@ -152,11 +152,11 @@
 	}
 
 	.prose-article code:not(pre code) {
-		@apply text-[0.85em] font-normal;
+		@apply text-[0.85em];
 	}
 
 	.prose-article pre {
-		@apply my-8 p-5 text-[0.9375rem] font-normal;
+		@apply my-8 p-5 text-[0.9375rem];
 	}
 
 	.prose-article blockquote {
@@ -178,7 +178,7 @@
 	}
 
 	.prose-article .alert p {
-		@apply text-base font-normal;
+		@apply text-base;
 	}
 }
 
