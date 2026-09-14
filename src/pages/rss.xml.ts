@@ -4,6 +4,7 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { render } from "astro:content";
 import { generatePath } from "@/lib/article-meta";
 import { getPosts, type Post } from "@/lib/posts";
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 /**
  * Renders a post's body to an HTML string, using the same Markdown pipeline as
@@ -44,8 +45,8 @@ export async function GET(context: APIContext) {
 	);
 
 	return rss({
-		title: "Sal's Blog",
-		description: "Thoughts from a programmer",
+		title: SITE_NAME,
+		description: SITE_TAGLINE,
 		site,
 		items,
 	});

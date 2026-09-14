@@ -3,15 +3,21 @@ import { format } from "date-fns";
 import Base from "@/layouts/Base.astro";
 import { generatePath } from "@/lib/article-meta";
 import { getPosts } from "@/lib/posts";
+import { AUTHOR_NAME, AUTHOR_URL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const posts = await getPosts();
 ---
 
-<Base title="Sal's Blog" description="Thoughts from a programmer">
+<Base title={SITE_NAME} description={SITE_TAGLINE}>
 	<main class="mx-auto max-w-2xl py-16">
-		<h1 class="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-12">
-			All Posts
-		</h1>
+		<header class="mb-12">
+			<h1 class="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-3">
+				{SITE_NAME}
+			</h1>
+			<p class="text-lg text-stone-500 leading-relaxed pb-0">
+				{SITE_TAGLINE}, by <a href={AUTHOR_URL}>{AUTHOR_NAME}</a>
+			</p>
+		</header>
 		<div class="space-y-1">
 			{
 				posts.map((post) => (
