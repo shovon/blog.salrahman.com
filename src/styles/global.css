@@ -3,6 +3,15 @@
 @theme {
 	--font-sans: var(--font-inter), system-ui, sans-serif;
 	--font-serif: var(--font-lora), Georgia, serif;
+
+	/*
+	 * Post page colors. Utilities such as `text-blog-title` read these through
+	 * CSS variables, so they can be overridden (for example, for dark mode)
+	 * without touching the markup.
+	 */
+	--color-blog-date: var(--color-indigo-600);
+	--color-blog-title: var(--color-stone-900);
+	--color-blog-summary: var(--color-stone-600);
 }
 
 @layer base {
@@ -85,12 +94,100 @@
 	}
 }
 
+/*
+ * Post body. The body text is larger and lighter than the rest of the site,
+ * so everything inside it is scaled to match.
+ */
+@layer base {
+	.prose-article {
+		@apply text-lg font-light leading-relaxed;
+	}
+
+	.prose-article > :first-child {
+		@apply mt-0;
+	}
+
+	.prose-article p {
+		@apply mb-6 pb-0 leading-relaxed;
+	}
+
+	.prose-article h2,
+	.prose-article h3,
+	.prose-article h4 {
+		@apply pb-0 font-bold leading-snug tracking-tight text-blog-title;
+	}
+
+	.prose-article h2 {
+		@apply mt-14 mb-4 pt-0 text-3xl;
+	}
+
+	.prose-article h3 {
+		@apply mt-10 mb-3 pt-0 text-2xl;
+	}
+
+	.prose-article h4 {
+		@apply mt-8 mb-2 pt-0 text-xl font-semibold;
+	}
+
+	.prose-article ul,
+	.prose-article ol {
+		@apply my-6 pl-7;
+	}
+
+	.prose-article li {
+		@apply mb-2 pl-1;
+	}
+
+	.prose-article li > ul,
+	.prose-article li > ol {
+		@apply my-2;
+	}
+
+	.prose-article li > p {
+		@apply mb-2;
+	}
+
+	.prose-article strong {
+		@apply font-semibold;
+	}
+
+	.prose-article code:not(pre code) {
+		@apply text-[0.85em] font-normal;
+	}
+
+	.prose-article pre {
+		@apply my-8 p-5 text-[0.9375rem] font-normal;
+	}
+
+	.prose-article blockquote {
+		@apply my-8;
+	}
+
+	.prose-article blockquote > :last-child,
+	.prose-article .alert > :last-child,
+	.prose-article li > :last-child {
+		@apply mb-0;
+	}
+
+	.prose-article hr {
+		@apply my-12;
+	}
+
+	.prose-article table {
+		@apply my-8 text-base;
+	}
+
+	.prose-article .alert p {
+		@apply text-base font-normal;
+	}
+}
+
 .katex-html {
 	@apply hidden;
 }
 
 .katex-display {
-	@apply block my-6;
+	@apply block my-6 overflow-x-auto overflow-y-hidden;
 }
 
 /* GitHub-style Alerts */
