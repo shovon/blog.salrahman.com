@@ -5,7 +5,7 @@ publishDate: "2025-09-15T15:20:00-08:00"
 author: "Sal Rahman"
 ---
 
-In another [article](https://blog.salrahman.com/posts/2025/09/fields-and-rings) about rings and fields, I briefly touched on the topic of an abelian group.
+In another [article](https://blog.salrahman.com/posts/2025/09/fields-and-rings/) about rings and fields, I briefly touched on the topic of an abelian group.
 
 As a quick refresher, in order for a set that happens to be equipped with a binary operation to even be considered an abelian group, it must satisfy the following properties:
 
