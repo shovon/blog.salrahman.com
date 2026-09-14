@@ -1,6 +1,6 @@
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { render } from "astro:content";
-import { generatePath } from "@/lib/article-meta";
+import { postPath } from "@/lib/article-meta";
 import { getPosts, type Post } from "@/lib/posts";
 
 /**
@@ -59,7 +59,7 @@ export async function getFeedItems(site: URL): Promise<FeedItem[]> {
 			title: post.data.title,
 			description: post.data.summary,
 			pubDate: new Date(post.data.publishDate),
-			link: `/posts${generatePath(post)}`,
+			link: postPath(post),
 			content: absolutize(await renderContent(container, post), site),
 		}))
 	);

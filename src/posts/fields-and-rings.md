@@ -5,13 +5,13 @@ publishDate: "2025-09-13T20:38:00-08:00"
 author: "Sal Rahman"
 ---
 
-I briefly mentioned in an another [post](https://blog.salrahman.com/posts/2025/08/teach-yourself-lattice-crypto-by-learning-abstract-algebra) that lattice-based crypto builds on the idea of grid of points (a lattice), and selecting a secret point, and hiding it by adding a small, controlled amounts of "noise".
+I briefly mentioned in an another [post](https://blog.salrahman.com/posts/2025/08/teach-yourself-lattice-crypto-by-learning-abstract-algebra/) that lattice-based crypto builds on the idea of grid of points (a lattice), and selecting a secret point, and hiding it by adding a small, controlled amounts of "noise".
 
 The imagery that may come to mind is something that can easily be derived by plotting real numbers on a grid (or something that may look like a grid). Indeed, that's precisely what so many videos online often use as analogies (such as [this one by chalk talk](https://www.youtube.com/watch?v=QDdOoYdb748)). Math with real numbers is often used as the basis, and integers are used to identify all exact spots on the grid.
 
 But in lattice-based cryptography, integers aren't quite used as how you were taught in elementary school, and real numbers aren't used at all.
 
-What's used, instead are rings (more specifically, [polynomial quotient rings](https://en.wikipedia.org/wiki/Polynomial_ring), but more on that in another blog post), and to work with those rings, we must work with fields (more spefically, [finite fields](https://en.wikipedia.org/wiki/Finite_field), but also will be a subject of a future blog post, or, feel free to read my post on ["elliptic curve cryptography"](https://blog.salrahman.com/posts/2024/09/elliptic-curve-cryptography-primer) which does touch on the topic of finite field math).
+What's used, instead are rings (more specifically, [polynomial quotient rings](https://en.wikipedia.org/wiki/Polynomial_ring), but more on that in another blog post), and to work with those rings, we must work with fields (more spefically, [finite fields](https://en.wikipedia.org/wiki/Finite_field), but also will be a subject of a future blog post, or, feel free to read my post on ["elliptic curve cryptography"](https://blog.salrahman.com/posts/2024/09/elliptic-curve-cryptography-primer/) which does touch on the topic of finite field math).
 
 So what are rings?
 

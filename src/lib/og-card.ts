@@ -3,6 +3,7 @@ import { createRequire } from "node:module";
 import { Resvg } from "@resvg/resvg-js";
 import satori from "satori";
 import { OG_HEIGHT, OG_WIDTH } from "@/lib/og";
+import { SITE_TAGLINE } from "@/lib/site";
 
 const resolve = createRequire(import.meta.url).resolve;
 
@@ -15,8 +16,6 @@ const STONE_500 = "#78716c";
 const STONE_800 = "#292524";
 const STONE_900 = "#1c1917";
 const INDIGO_600 = "#4f46e5";
-
-const SITE_NAME = "Thoughts from a programmer";
 
 // Satori reads ttf, otf, and woff, but not woff2, and it needs real font bytes
 // rather than the stylesheet Astro's font provider emits. Fontsource ships the
@@ -134,7 +133,7 @@ export async function renderCard({
 			// Left empty on the site's own card, where the title already says this.
 			el(
 				{ fontFamily: "Lora", fontWeight: 600, fontSize: 26, color: STONE_800 },
-				title === SITE_NAME ? "" : SITE_NAME
+				title === SITE_TAGLINE ? "" : SITE_TAGLINE
 			),
 			el({ fontSize: 22, color: STONE_400 }, "blog.salrahman.com"),
 		]

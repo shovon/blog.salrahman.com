@@ -2,6 +2,7 @@
 import { Font } from "astro:assets";
 import "@/styles/global.css";
 import { OG_DEFAULT_PATH, OG_HEIGHT, OG_WIDTH } from "@/lib/og";
+import { AUTHOR_NAME, AUTHOR_URL, SITE_NAME } from "@/lib/site";
 
 interface Props {
 	title: string;
@@ -12,6 +13,8 @@ interface Props {
 	publishDate?: string;
 	/** Path to this page's social card. Falls back to the site-wide one. */
 	image?: string;
+	/** Keep the page out of search results, e.g. the 404 page. */
+	noindex?: boolean;
 }
 
 const {
@@ -20,11 +23,16 @@ const {
 	type = "website",
 	publishDate,
 	image = OG_DEFAULT_PATH,
+	noindex = false,
 } = Astro.props;
 
 // Crawlers fetch the page from elsewhere, so every URL in the head is absolute.
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
+
+// Tabs and bookmarks lead with the page's own title and say whose site it is.
+// The home page is titled by the site name alone, rather than by it twice.
+const documentTitle = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
 ---
 
 <html lang="en">
@@ -32,9 +40,10 @@ const ogImage = new URL(image, Astro.site);
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" href="/favicon.ico" />
-		<title>{title}</title>
+		<title>{documentTitle}</title>
 		<meta name="description" content={description} />
-		<meta name="author" content="Sal Rahman" />
+		<meta name="author" content={AUTHOR_NAME} />
+		{noindex && <meta name="robots" content="noindex" />}
 		<link rel="canonical" href={canonical} />
 
 		<!-- Open Graph: the preview that chat apps and social sites unfurl. -->
@@ -42,7 +51,7 @@ const ogImage = new URL(image, Astro.site);
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
-		<meta property="og:site_name" content="Sal's Blog" />
+		<meta property="og:site_name" content={SITE_NAME} />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:image" content={ogImage} />
 		<meta property="og:image:width" content={`${OG_WIDTH}`} />
@@ -68,13 +77,13 @@ const ogImage = new URL(image, Astro.site);
 		<link
 			rel="alternate"
 			type="application/rss+xml"
-			title="Sal's Blog"
+			title={SITE_NAME}
 			href={new URL("rss.xml", Astro.site)}
 		/>
 		<link
 			rel="alternate"
 			type="application/atom+xml"
-			title="Sal's Blog (Atom)"
+			title={`${SITE_NAME} (Atom)`}
 			href={new URL("atom.xml", Astro.site)}
 		/>
 		<Font cssVariable="--font-inter" preload />
@@ -83,14 +92,14 @@ const ogImage = new URL(image, Astro.site);
 	<body class="font-sans">
 		<div class="min-h-screen">
 			<nav class="border-b border-stone-200 bg-white/80 backdrop-blur-xs sticky top-0 z-10 px-6">
-				<div class="mx-auto max-w-2xl py-4 flex items-center justify-between">
+				<div class="mx-auto max-w-3xl py-4 flex items-center justify-between">
 					<a href="/" class="text-stone-800 hover:text-stone-600 no-underline">
 						<span class="font-serif text-lg font-medium tracking-tight">
-							Thoughts from a programmer
+							{SITE_NAME}
 						</span>
 					</a>
 					<a
-						href="https://salrahman.com"
+						href={AUTHOR_URL}
 						class="text-sm text-stone-500 hover:text-stone-800 transition-colors"
 					>
 						About

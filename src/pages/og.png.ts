@@ -1,10 +1,11 @@
 import { renderCard } from "@/lib/og-card";
+import { AUTHOR_NAME, SITE_TAGLINE } from "@/lib/site";
 
 /** The card for the site as a whole, shown for any page without one of its own. */
 export async function GET() {
 	const png = await renderCard({
-		eyebrow: "Sal Rahman",
-		title: "Thoughts from a programmer",
+		eyebrow: AUTHOR_NAME,
+		title: SITE_TAGLINE,
 	});
 
 	return new Response(png, {

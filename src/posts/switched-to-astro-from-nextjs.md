@@ -5,7 +5,7 @@ publishDate: "2026-09-13T15:38:00-08:00"
 author: "Sal Rahman"
 ---
 
-When I first decided to [go back to blogging](https://blog.salrahman.com/posts/2024/07/first-post), I wanted to write posts in Markdown and have that be delivered to the web.
+When I first decided to [go back to blogging](https://blog.salrahman.com/posts/2024/07/first-post/), I wanted to write posts in Markdown and have that be delivered to the web.
 
 HTML written by hand was out of the question purely because it's tedious. I like Markdown, and by 2024, there really wasn't any shortage of platforms (both static local build tools as well as hosted solutions) that allowed one to write in paragraphs without having to deal with syntax. The market settled: it's either [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG), or the typical format in the "textarea" box in most chat software; relying on nothing but UTF-8, punctuations and paragraphs to format plain text, yet successfully convey a message without formatting typography per text components.
 

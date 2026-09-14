@@ -6,6 +6,7 @@ import {
 	FEED_ICON_SIZE,
 	getFeedItems,
 } from "@/lib/feed";
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 export async function GET(context: APIContext) {
 	const site = context.site!;
@@ -13,8 +14,8 @@ export async function GET(context: APIContext) {
 	const items = await getFeedItems(site);
 
 	return rss({
-		title: "Sal's Blog",
-		description: "Thoughts from a programmer",
+		title: SITE_NAME,
+		description: SITE_TAGLINE,
 		site,
 		items,
 		xmlns: { atom: "http://www.w3.org/2005/Atom" },
@@ -24,7 +25,7 @@ export async function GET(context: APIContext) {
 			`<atom:link href="${escapeXml(new URL("rss.xml", site).href)}" rel="self" type="application/rss+xml"/>`,
 			"<image>",
 			`<url>${escapeXml(new URL(FEED_ICON_PATH, site).href)}</url>`,
-			"<title>Sal's Blog</title>",
+			`<title>${escapeXml(SITE_NAME)}</title>`,
 			`<link>${escapeXml(new URL("/", site).href)}</link>`,
 			`<width>${FEED_ICON_SIZE}</width>`,
 			`<height>${FEED_ICON_SIZE}</height>`,
