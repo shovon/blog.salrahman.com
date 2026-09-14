@@ -9,7 +9,7 @@ const posts = await getPosts();
 ---
 
 <Base title={SITE_NAME} description={SITE_TAGLINE}>
-	<main class="mx-auto max-w-2xl py-16">
+	<main class="mx-auto max-w-3xl py-16">
 		<header class="mb-12">
 			<h1 class="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-3">
 				{SITE_NAME}
@@ -29,7 +29,10 @@ const posts = await getPosts();
 							<h2 class="text-base font-medium text-stone-900 group-hover:text-indigo-600 transition-colors duration-200 p-0 tracking-normal">
 								{post.data.title}
 							</h2>
-							<time class="text-sm text-stone-400 tabular-nums shrink-0">
+							<time
+								datetime={format(new Date(post.data.publishDate), "yyyy-MM-dd")}
+								class="text-sm text-stone-400 tabular-nums shrink-0"
+							>
 								{format(new Date(post.data.publishDate), "MMM d, yyyy")}
 							</time>
 						</div>
