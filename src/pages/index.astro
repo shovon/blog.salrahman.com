@@ -9,15 +9,25 @@ const posts = await getPosts();
 ---
 
 <Base title={SITE_NAME} description={SITE_TAGLINE}>
-	<main class="mx-auto max-w-3xl py-16">
-		<header class="mb-12">
-			<h1 class="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-3 dark:text-stone-100">
+	<main class="mx-auto max-w-3xl pt-16 pb-24 sm:pt-20">
+		<header>
+			<h1 class="font-serif text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-blog-title">
 				{SITE_NAME}
 			</h1>
-			<p class="text-lg text-stone-500 leading-relaxed pb-0 dark:text-stone-400">
-				{SITE_TAGLINE}, by <a href={AUTHOR_URL}>{AUTHOR_NAME}</a>
+			<p class="mt-4 pb-0 text-xl leading-relaxed text-blog-summary">
+				{SITE_TAGLINE},{" "}
+				<span class="whitespace-nowrap">
+					by{" "}
+					<a
+						href={AUTHOR_URL}
+						class="text-blog-title underline decoration-stone-300 decoration-1 underline-offset-4 hover:text-blog-title hover:decoration-current dark:text-blog-title dark:decoration-stone-600 dark:hover:text-blog-title"
+					>
+						{AUTHOR_NAME}
+					</a>
+				</span>
 			</p>
 		</header>
+		<hr class="mt-10 mb-6 border-current opacity-20" />
 		<div class="space-y-1">
 			{
 				posts.map((post) => (
@@ -25,8 +35,8 @@ const posts = await getPosts();
 						href={postPath(post)}
 						class="group block rounded-lg px-4 py-4 -mx-4 hover:bg-white hover:shadow-xs dark:hover:bg-stone-900 transition-all duration-200 no-underline"
 					>
-						<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-							<h2 class="text-base font-medium text-stone-900 group-hover:text-indigo-600 dark:text-stone-100 dark:group-hover:text-indigo-400 transition-colors duration-200 p-0 tracking-normal">
+						<div class="flex flex-col-reverse sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-6">
+							<h2 class="text-lg font-semibold leading-snug text-blog-title group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200 p-0 tracking-normal">
 								{post.data.title}
 							</h2>
 							<time
@@ -37,7 +47,7 @@ const posts = await getPosts();
 							</time>
 						</div>
 						{post.data.summary && (
-							<p class="mt-1 text-sm leading-5 text-stone-500 line-clamp-1 pb-0 dark:text-stone-400">
+							<p class="mt-1.5 text-[0.9375rem] leading-relaxed text-blog-summary line-clamp-2 pb-0">
 								{post.data.summary}
 							</p>
 						)}
