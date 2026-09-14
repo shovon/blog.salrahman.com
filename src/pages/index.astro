@@ -1,7 +1,7 @@
 ---
 import { format } from "date-fns";
 import Base from "@/layouts/Base.astro";
-import { generatePath } from "@/lib/article-meta";
+import { postPath } from "@/lib/article-meta";
 import { getPosts } from "@/lib/posts";
 
 const posts = await getPosts();
@@ -16,7 +16,7 @@ const posts = await getPosts();
 			{
 				posts.map((post) => (
 					<a
-						href={`/posts${generatePath(post)}`}
+						href={postPath(post)}
 						class="group block rounded-lg px-4 py-4 -mx-4 hover:bg-white hover:shadow-xs transition-all duration-200 no-underline"
 					>
 						<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">

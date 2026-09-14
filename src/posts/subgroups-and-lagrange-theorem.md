@@ -5,7 +5,7 @@ publishDate: "2025-09-20T15:38:00-08:00"
 author: "Sal Rahman"
 ---
 
-In another [post](https://blog.salrahman.com/posts/2025/09/groups), we have been introduced to groups.
+In another [post](https://blog.salrahman.com/posts/2025/09/groups/), we have been introduced to groups.
 
 The next question to ask is, can groups be subdivided? Yes, they most certainly can. Now, is that subdivision guaranteed to be a group themselves? Only under certain circumstances, and it is entirely on a case-by-case basis on certain sets. Not all groups can cleanly be subdivided into other groups.
 
