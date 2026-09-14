@@ -71,6 +71,12 @@ const ogImage = new URL(image, Astro.site);
 			title="Sal's Blog"
 			href={new URL("rss.xml", Astro.site)}
 		/>
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			title="Sal's Blog (Atom)"
+			href={new URL("atom.xml", Astro.site)}
+		/>
 		<Font cssVariable="--font-inter" preload />
 		<Font cssVariable="--font-lora" preload />
 	</head>

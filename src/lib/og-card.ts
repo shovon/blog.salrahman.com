@@ -183,3 +183,44 @@ export async function renderCard({
 	bytes.set(png);
 	return bytes;
 }
+
+/**
+ * Renders a small square icon as a PNG: the site's initial, in the card's serif,
+ * on the card's indigo. Used as the feed's channel image, which RSS 2.0 caps at
+ * 144 pixels wide.
+ * @param size The width and height, in pixels
+ */
+export async function renderIcon(size: number): Promise<Uint8Array<ArrayBuffer>> {
+	const icon = el(
+		{
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			width: size,
+			height: size,
+			backgroundColor: INDIGO_600,
+			color: STONE_50,
+			fontFamily: "Lora",
+			fontWeight: 600,
+			fontSize: Math.round(size * 0.62),
+		},
+		"S"
+	);
+
+	const svg = await satori(icon, {
+		width: size,
+		height: size,
+		fonts: await loadFonts(),
+	});
+
+	const png = new Resvg(svg, {
+		fitTo: { mode: "width", value: size },
+		font: { loadSystemFonts: false },
+	})
+		.render()
+		.asPng();
+
+	const bytes = new Uint8Array(png.byteLength);
+	bytes.set(png);
+	return bytes;
+}
