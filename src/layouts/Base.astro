@@ -80,6 +80,12 @@ const documentTitle = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
 			title={SITE_NAME}
 			href={new URL("rss.xml", Astro.site)}
 		/>
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			title={`${SITE_NAME} (Atom)`}
+			href={new URL("atom.xml", Astro.site)}
+		/>
 		<Font cssVariable="--font-inter" preload />
 		<Font cssVariable="--font-lora" preload />
 	</head>

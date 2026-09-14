@@ -1,53 +1,35 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
-import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { render } from "astro:content";
-import { postPath } from "@/lib/article-meta";
-import { getPosts, type Post } from "@/lib/posts";
+import {
+	escapeXml,
+	FEED_ICON_PATH,
+	FEED_ICON_SIZE,
+	getFeedItems,
+} from "@/lib/feed";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
-/**
- * Renders a post's body to an HTML string, using the same Markdown pipeline as
- * the site itself, so that code highlighting, math, and alerts survive.
- */
-async function renderContent(
-	container: AstroContainer,
-	post: Post
-): Promise<string> {
-	const { Content } = await render(post);
-	return container.renderToString(Content);
-}
-
-/**
- * Feed readers fetch the feed from elsewhere, so root-relative URLs in the post
- * body have nothing to resolve against. Make them absolute.
- */
-function absolutize(html: string, site: URL): string {
-	return html.replace(
-		/(\s(?:href|src)=")\/(?!\/)/g,
-		(_, attribute) => `${attribute}${new URL("/", site).href}`
-	);
-}
-
 export async function GET(context: APIContext) {
-	const posts = await getPosts();
-	const container = await AstroContainer.create();
 	const site = context.site!;
 
-	const items = await Promise.all(
-		posts.map(async (post) => ({
-			title: post.data.title,
-			description: post.data.summary,
-			pubDate: new Date(post.data.publishDate),
-			link: postPath(post),
-			content: absolutize(await renderContent(container, post), site),
-		}))
-	);
+	const items = await getFeedItems(site);
 
 	return rss({
 		title: SITE_NAME,
 		description: SITE_TAGLINE,
 		site,
 		items,
+		xmlns: { atom: "http://www.w3.org/2005/Atom" },
+		// Validators want the feed to name its own URL. The image's title and
+		// link must match the channel's.
+		customData: [
+			`<atom:link href="${escapeXml(new URL("rss.xml", site).href)}" rel="self" type="application/rss+xml"/>`,
+			"<image>",
+			`<url>${escapeXml(new URL(FEED_ICON_PATH, site).href)}</url>`,
+			`<title>${escapeXml(SITE_NAME)}</title>`,
+			`<link>${escapeXml(new URL("/", site).href)}</link>`,
+			`<width>${FEED_ICON_SIZE}</width>`,
+			`<height>${FEED_ICON_SIZE}</height>`,
+			"</image>",
+		].join(""),
 	});
 }
