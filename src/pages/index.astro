@@ -11,10 +11,10 @@ const posts = await getPosts();
 <Base title={SITE_NAME} description={SITE_TAGLINE}>
 	<main class="mx-auto max-w-3xl py-16">
 		<header class="mb-12">
-			<h1 class="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-3">
+			<h1 class="font-serif text-4xl font-medium tracking-tight text-stone-900 mb-3 dark:text-stone-100">
 				{SITE_NAME}
 			</h1>
-			<p class="text-lg text-stone-500 leading-relaxed pb-0">
+			<p class="text-lg text-stone-500 leading-relaxed pb-0 dark:text-stone-400">
 				{SITE_TAGLINE}, by <a href={AUTHOR_URL}>{AUTHOR_NAME}</a>
 			</p>
 		</header>
@@ -23,21 +23,21 @@ const posts = await getPosts();
 				posts.map((post) => (
 					<a
 						href={postPath(post)}
-						class="group block rounded-lg px-4 py-4 -mx-4 hover:bg-white hover:shadow-xs transition-all duration-200 no-underline"
+						class="group block rounded-lg px-4 py-4 -mx-4 hover:bg-white hover:shadow-xs dark:hover:bg-stone-900 transition-all duration-200 no-underline"
 					>
 						<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-							<h2 class="text-base font-medium text-stone-900 group-hover:text-indigo-600 transition-colors duration-200 p-0 tracking-normal">
+							<h2 class="text-base font-medium text-stone-900 group-hover:text-indigo-600 dark:text-stone-100 dark:group-hover:text-indigo-400 transition-colors duration-200 p-0 tracking-normal">
 								{post.data.title}
 							</h2>
 							<time
 								datetime={format(new Date(post.data.publishDate), "yyyy-MM-dd")}
-								class="text-sm text-stone-400 tabular-nums shrink-0"
+								class="text-sm text-stone-400 tabular-nums shrink-0 dark:text-stone-500"
 							>
 								{format(new Date(post.data.publishDate), "MMM d, yyyy")}
 							</time>
 						</div>
 						{post.data.summary && (
-							<p class="mt-1 text-sm leading-5 text-stone-500 line-clamp-1 pb-0">
+							<p class="mt-1 text-sm leading-5 text-stone-500 line-clamp-1 pb-0 dark:text-stone-400">
 								{post.data.summary}
 							</p>
 						)}
