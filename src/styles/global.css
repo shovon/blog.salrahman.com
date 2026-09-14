@@ -14,9 +14,22 @@
 	--color-blog-summary: var(--color-stone-600);
 }
 
+/* Dark mode follows the system setting (Tailwind's default `dark:` variant). */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-blog-date: var(--color-indigo-400);
+		--color-blog-title: var(--color-stone-100);
+		--color-blog-summary: var(--color-stone-400);
+	}
+}
+
 @layer base {
 	body {
-		@apply bg-stone-50 text-stone-800 antialiased;
+		@apply bg-stone-50 text-stone-800 antialiased dark:bg-stone-950 dark:text-stone-300;
+	}
+
+	::selection {
+		@apply dark:bg-indigo-400/30 dark:text-stone-50;
 	}
 
 	p {
@@ -24,27 +37,27 @@
 	}
 
 	a {
-		@apply text-indigo-600 hover:text-indigo-800 transition-colors duration-200;
+		@apply text-indigo-600 hover:text-indigo-800 transition-colors duration-200 dark:text-indigo-400 dark:hover:text-indigo-300;
 	}
 
 	h2 {
-		@apply font-bold text-2xl pb-3 pt-8 text-stone-900 tracking-tight;
+		@apply font-bold text-2xl pb-3 pt-8 text-stone-900 tracking-tight dark:text-stone-100;
 	}
 
 	h3 {
-		@apply font-bold text-xl pb-3 pt-6 text-stone-900 tracking-tight;
+		@apply font-bold text-xl pb-3 pt-6 text-stone-900 tracking-tight dark:text-stone-100;
 	}
 
 	h4 {
-		@apply font-semibold pb-3 pt-4 text-stone-900;
+		@apply font-semibold pb-3 pt-4 text-stone-900 dark:text-stone-100;
 	}
 
 	pre {
-		@apply mb-5 rounded-lg p-4 text-sm leading-relaxed overflow-x-auto border border-stone-200 bg-stone-900 text-stone-100;
+		@apply mb-5 rounded-lg p-4 text-sm leading-relaxed overflow-x-auto border border-stone-200 bg-stone-900 text-stone-100 dark:border-stone-800;
 	}
 
 	code:not(pre code) {
-		@apply bg-stone-200 text-stone-800 rounded-sm px-1.5 py-0.5 text-sm font-mono;
+		@apply bg-stone-200 text-stone-800 rounded-sm px-1.5 py-0.5 text-sm font-mono dark:bg-stone-800 dark:text-stone-200;
 	}
 
 	pre code {
@@ -66,15 +79,15 @@
 	}
 
 	hr {
-		@apply my-8 border-stone-200;
+		@apply my-8 border-stone-200 dark:border-stone-800;
 	}
 
 	strong {
-		@apply font-semibold text-stone-900;
+		@apply font-semibold text-stone-900 dark:text-stone-100;
 	}
 
 	blockquote {
-		@apply border-l-4 border-indigo-300 bg-indigo-50/50 pl-5 pr-4 py-3 my-6 rounded-r-lg;
+		@apply border-l-4 border-indigo-300 bg-indigo-50/50 pl-5 pr-4 py-3 my-6 rounded-r-lg dark:border-indigo-500/60 dark:bg-indigo-950/40;
 	}
 
 	blockquote p:last-child {
@@ -86,11 +99,11 @@
 	}
 
 	th {
-		@apply text-left font-semibold p-3 border-b-2 border-stone-200 text-stone-900;
+		@apply text-left font-semibold p-3 border-b-2 border-stone-200 text-stone-900 dark:border-stone-700 dark:text-stone-100;
 	}
 
 	td {
-		@apply p-3 border-b border-stone-100;
+		@apply p-3 border-b border-stone-100 dark:border-stone-800;
 	}
 }
 
@@ -198,17 +211,17 @@
 	@apply m-0 mb-2 font-semibold;
 }
 .alert-note {
-	@apply border-blue-200 bg-blue-50 text-blue-900;
+	@apply border-blue-200 bg-blue-50 text-blue-900 dark:border-blue-900 dark:bg-blue-950/50 dark:text-blue-200;
 }
 .alert-tip {
-	@apply border-emerald-200 bg-emerald-50 text-emerald-900;
+	@apply border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-200;
 }
 .alert-important {
-	@apply border-purple-200 bg-purple-50 text-purple-900;
+	@apply border-purple-200 bg-purple-50 text-purple-900 dark:border-purple-900 dark:bg-purple-950/50 dark:text-purple-200;
 }
 .alert-warning {
-	@apply border-amber-200 bg-amber-50 text-amber-900;
+	@apply border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950/50 dark:text-amber-200;
 }
 .alert-caution {
-	@apply border-red-200 bg-red-50 text-red-900;
+	@apply border-red-200 bg-red-50 text-red-900 dark:border-red-900 dark:bg-red-950/50 dark:text-red-200;
 }

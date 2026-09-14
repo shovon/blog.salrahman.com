@@ -31,6 +31,7 @@ const ogImage = new URL(image, Astro.site);
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
 		<link rel="icon" href="/favicon.ico" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -76,16 +77,16 @@ const ogImage = new URL(image, Astro.site);
 	</head>
 	<body class="font-sans">
 		<div class="min-h-screen">
-			<nav class="border-b border-stone-200 bg-white/80 backdrop-blur-xs sticky top-0 z-10 px-6">
+			<nav class="border-b border-stone-200 bg-white/80 backdrop-blur-xs dark:border-stone-800 dark:bg-stone-950/80 sticky top-0 z-10 px-6">
 				<div class="mx-auto max-w-3xl py-4 flex items-center justify-between">
-					<a href="/" class="text-stone-800 hover:text-stone-600 no-underline">
+					<a href="/" class="text-stone-800 hover:text-stone-600 no-underline dark:text-stone-100 dark:hover:text-stone-300">
 						<span class="font-serif text-lg font-medium tracking-tight">
 							Thoughts from a programmer
 						</span>
 					</a>
 					<a
 						href="https://salrahman.com"
-						class="text-sm text-stone-500 hover:text-stone-800 transition-colors"
+						class="text-sm text-stone-500 hover:text-stone-800 transition-colors dark:text-stone-400 dark:hover:text-stone-100"
 					>
 						About
 					</a>
