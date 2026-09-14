@@ -2,7 +2,7 @@ import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { render } from "astro:content";
-import { generatePath } from "@/lib/article-meta";
+import { postPath } from "@/lib/article-meta";
 import { getPosts, type Post } from "@/lib/posts";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
@@ -39,7 +39,7 @@ export async function GET(context: APIContext) {
 			title: post.data.title,
 			description: post.data.summary,
 			pubDate: new Date(post.data.publishDate),
-			link: `/posts${generatePath(post)}`,
+			link: postPath(post),
 			content: absolutize(await renderContent(container, post), site),
 		}))
 	);

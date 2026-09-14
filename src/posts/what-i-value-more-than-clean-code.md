@@ -5,7 +5,7 @@ publishDate: "2024-11-02T00:00:00-00:00"
 author: "Sal Rahman"
 ---
 
-Previously, I wrote about [code being ephemeral](https://blog.salrahman.com/posts/2024/11/ephemerality-of-code).
+Previously, I wrote about [code being ephemeral](https://blog.salrahman.com/posts/2024/11/ephemerality-of-code/).
 
 I have so much more thoughts about code cleanliness.
 

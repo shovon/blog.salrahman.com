@@ -13,6 +13,8 @@ interface Props {
 	publishDate?: string;
 	/** Path to this page's social card. Falls back to the site-wide one. */
 	image?: string;
+	/** Keep the page out of search results, e.g. the 404 page. */
+	noindex?: boolean;
 }
 
 const {
@@ -21,6 +23,7 @@ const {
 	type = "website",
 	publishDate,
 	image = OG_DEFAULT_PATH,
+	noindex = false,
 } = Astro.props;
 
 // Crawlers fetch the page from elsewhere, so every URL in the head is absolute.
@@ -40,6 +43,7 @@ const documentTitle = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
 		<title>{documentTitle}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content={AUTHOR_NAME} />
+		{noindex && <meta name="robots" content="noindex" />}
 		<link rel="canonical" href={canonical} />
 
 		<!-- Open Graph: the preview that chat apps and social sites unfurl. -->

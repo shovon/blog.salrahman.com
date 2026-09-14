@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
+import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -8,6 +9,7 @@ import rehypeGithubAlerts from "./src/lib/rehypeGithubAlerts";
 
 export default defineConfig({
   site: "https://blog.salrahman.com",
+  integrations: [sitemap()],
   markdown: {
     processor: unified({
       // Keep straight quotes, as the site had before.

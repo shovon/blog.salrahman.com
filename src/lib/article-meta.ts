@@ -24,3 +24,15 @@ export function generatePath(post: Post): string {
 	const { year, month, slug } = getMeta(post);
 	return `/${year}/${month}/${slug}`;
 }
+
+/**
+ * The URL of a post's page, relative to the site root.
+ *
+ * Ends in a slash, since that is where the page is served from; linking without
+ * it costs a redirect.
+ * @param post The post whose page to link to
+ * @returns The root-relative URL of the post's page
+ */
+export function postPath(post: Post): string {
+	return `/posts${generatePath(post)}/`;
+}
