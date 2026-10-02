@@ -75,6 +75,9 @@ const documentTitle = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
 		<meta name="twitter:image" content={ogImage} />
 		<meta name="twitter:image:alt" content={title} />
 
+		<!-- Mastodon credits the author under the link preview. -->
+		<meta name="fediverse:creator" content="@manlycoffee@techhub.social" />
+
 		<link
 			rel="alternate"
 			type="application/rss+xml"
