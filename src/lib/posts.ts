@@ -21,6 +21,11 @@ function isComplete(entry: Entry): entry is Post {
 	return false;
 }
 
+/** Gets the posts to show in listings: everything but the unlisted ones. */
+export async function getListedPosts(): Promise<Post[]> {
+	return (await getPosts()).filter((post) => !post.data.unlisted);
+}
+
 /**
  * Gets all posts with complete frontmatter, newest first. Posts with missing
  * or invalid frontmatter are skipped, with a warning.

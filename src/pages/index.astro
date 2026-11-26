@@ -2,10 +2,10 @@
 import { format } from "date-fns";
 import Base from "@/layouts/Base.astro";
 import { postPath } from "@/lib/article-meta";
-import { getPosts } from "@/lib/posts";
+import { getListedPosts } from "@/lib/posts";
 import { AUTHOR_NAME, AUTHOR_URL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
-const posts = await getPosts();
+const posts = await getListedPosts();
 ---
 
 <Base title={SITE_NAME} description={SITE_TAGLINE}>

@@ -15,6 +15,8 @@ const posts = defineCollection({
       .refine((value) => !isNaN(new Date(value).getTime()))
       .optional()
       .catch(undefined),
+    // Unlisted posts get a page, but stay off the home page, feeds and sitemap.
+    unlisted: z.boolean().catch(false),
   }),
 });
 

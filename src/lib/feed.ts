@@ -1,7 +1,7 @@
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { render } from "astro:content";
 import { postPath } from "@/lib/article-meta";
-import { getPosts, type Post } from "@/lib/posts";
+import { getListedPosts, type Post } from "@/lib/posts";
 
 /**
  * The small square image that feed readers show beside the feed's name. RSS 2.0
@@ -51,7 +51,7 @@ function absolutize(html: string, site: URL): string {
  * @returns The feed items
  */
 export async function getFeedItems(site: URL): Promise<FeedItem[]> {
-	const posts = await getPosts();
+	const posts = await getListedPosts();
 	const container = await AstroContainer.create();
 
 	return Promise.all(

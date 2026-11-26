@@ -30,6 +30,7 @@ const source = sourceUrl(post.filePath);
 	type="article"
 	publishDate={post.data.publishDate}
 	image={ogImagePath(post)}
+	noindex={post.data.unlisted}
 >
 	<main class="mx-auto max-w-3xl py-12">
 		<article>

@@ -1,0 +1,70 @@
+/* Charts in the benchmark appendix of "Which codebase would an LLM rather maintain?". Drawn by charts.js. */
+.bb-chart {
+	/* one colour per contender; the baseline is a neutral on purpose */
+	--bb-bunnyhug: #2a78d6;
+	--bb-ponytail: #eb6834;
+	--bb-ken: #1baf7a;
+	--bb-baseline: #78716c;
+	--bb-surface: #fafaf9;
+	--bb-muted: #6b645f;
+	--bb-grid: #e7e5e4;
+	--bb-axis: #a8a29e;
+	--bb-panel: #fff;
+	margin: 1.5rem 0 1.25rem;
+	min-height: 170px;
+	min-width: 0;
+	font-size: 13px;
+	line-height: 1.45;
+}
+@media (prefers-color-scheme: dark) {
+	.bb-chart {
+		--bb-bunnyhug: #3987e5;
+		--bb-ponytail: #d95926;
+		--bb-ken: #199e70;
+		--bb-baseline: #c4c0bc;
+		--bb-surface: #0c0a09;
+		--bb-muted: #a8a29e;
+		--bb-grid: #292524;
+		--bb-axis: #57534e;
+		--bb-panel: #1c1917;
+	}
+}
+.bb-chart-tall { min-height: 320px; }
+.bb-plot { position: relative; min-width: 0; }
+.bb-facets { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 28px; }
+.bb-svg { display: block; width: 100%; height: auto; overflow: visible; font-variant-numeric: tabular-nums; }
+.bb-svg text { font-family: inherit; font-size: 12.5px; fill: currentColor; }
+.bb-svg .bb-facet { font-size: 13px; font-weight: 600; }
+.bb-svg .bb-tick { font-size: 11.5px; fill: var(--bb-muted); }
+.bb-svg .bb-grid { stroke: var(--bb-grid); stroke-width: 1; fill: none; }
+.bb-svg .bb-axis { stroke: var(--bb-axis); stroke-width: 1; fill: none; }
+.bb-svg .bb-hit { fill: transparent; }
+.bb-keys { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 10px; padding: 0; list-style: none; color: var(--bb-muted); }
+.bb-key { display: inline-flex; align-items: center; gap: 7px; margin: 0; padding: 0; }
+.bb-sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+.bb-tip { position: absolute; z-index: 2; pointer-events: none; max-width: 260px; padding: 8px 10px; border-radius: 8px; background: var(--bb-panel); border: 1px solid var(--bb-grid); box-shadow: 0 4px 14px rgb(0 0 0 / 0.12); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.bb-tip-title { font-weight: 600; }
+.bb-tip-line { display: flex; align-items: center; gap: 6px; color: var(--bb-muted); }
+.bb-wait { margin: 0; padding: 0; color: var(--bb-muted); }
+
+/* Shown where the charts cannot be drawn: in a feed reader, which loads no stylesheet, or with scripts off. */
+.bb-noscript { display: none; }
+@media (scripting: none) {
+	.bb-noscript { display: block; }
+	.bb-chart { display: none; }
+}
+
+/* The second appendix ("checking the judges"): one row per score and the measurement it is compared with. Drawn by verdict.js. */
+.bbv-lol { display: flex; flex-direction: column; }
+.bbv-lol-row { display: grid; grid-template-columns: minmax(0, 1fr) 250px 92px; gap: 6px 16px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--bb-grid); }
+.bbv-lol-head { font-size: 12.5px; color: var(--bb-muted); border-bottom: 1px solid var(--bb-axis); }
+.bbv-lol-name b { font-weight: 600; text-transform: capitalize; }
+.bbv-lol-name span, .bbv-lol-dim { color: var(--bb-muted); }
+.bbv-lol-name span { display: block; }
+.bbv-lol-val { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bbv-lol-val b { font-weight: 600; }
+@media (max-width: 640px) {
+	.bbv-lol-row { grid-template-columns: minmax(0, 1fr) 104px; }
+	.bbv-lol-name { grid-column: 1 / -1; }
+	.bbv-lol-head .bbv-lol-name { display: none; }
+}

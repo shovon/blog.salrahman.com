@@ -1,4 +1,5 @@
 // @ts-check
+import { readdirSync, readFileSync } from "node:fs";
 import { defineConfig, fontProviders } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 import sitemap from "@astrojs/sitemap";
@@ -7,9 +8,21 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeGithubAlerts from "./src/lib/rehypeGithubAlerts";
 
+// Slugs of unlisted posts, to keep them out of the sitemap. Content collections
+// aren't available in this file, so the frontmatter is matched directly.
+const unlisted = readdirSync("src/posts")
+  .filter((file) =>
+    /^unlisted:\s*true\s*$/m.test(readFileSync(`src/posts/${file}`, "utf8")),
+  )
+  .map((file) => file.replace(/\.md$/, ""));
+
 export default defineConfig({
   site: "https://blog.salrahman.com",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !unlisted.some((slug) => page.endsWith(`/${slug}/`)),
+    }),
+  ],
   markdown: {
     processor: unified({
       // Keep straight quotes, as the site had before.
